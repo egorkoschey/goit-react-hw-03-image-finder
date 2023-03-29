@@ -1,0 +1,17 @@
+.listItem {
+    margin: 10px;
+    width: calc((100% - 60px) / 3);
+  }
+  .itemImage {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .itemImage:hover,
+  .itemImage:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  

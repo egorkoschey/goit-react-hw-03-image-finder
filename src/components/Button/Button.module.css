@@ -1,0 +1,21 @@
+.loadmoreBtn {
+    color: aliceblue;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    background-color: rgb(108, 24, 226);
+    margin-bottom: 20px;
+  }
+  
+  .loadmoreBtn:hover {
+    background-color: rgb(239, 147, 147);
+  }
+  .boxBtn {
+    display: flex;
+    justify-content: center;
+  
+    bottom: 0;
+  }
+  
