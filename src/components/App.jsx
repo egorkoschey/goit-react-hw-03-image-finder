@@ -5,7 +5,6 @@ import ImageGallery from './ImageGallery';
 import Button from './Button/Button';
 import Loader from './Loader';
 
-
 export class App extends Component {
   state = {
     search: '',
@@ -33,6 +32,7 @@ export class App extends Component {
       }
     }
   }
+
   handleSubmit = (e, value) => {
     e.preventDefault();
 
@@ -50,19 +50,15 @@ export class App extends Component {
   };
 
   render() {
-    // this.setState({
-    //   search: '',
-    //   page: 1,
-    // });
     const { isLoading, allImages } = this.state;
     const isAllImages = allImages.length;
     return (
       <div>
         <header>
           <Searchbar onSubmitForm={this.handleSubmit} />
-          <ImageGallery items={this.state.allImages} />
+          <ImageGallery items={allImages} />
           {isLoading && <Loader />}
-          {isAllImages && <Button handleButtonClick={this.loadMore} />}
+          {isAllImages > 0 && <Button handleButtonClick={this.loadMore} images={allImages} />}
         </header>
       </div>
     );

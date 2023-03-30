@@ -1,15 +1,17 @@
 import s from './Button.module.css';
 
-const Button = ({ handleButtonClick }) => {
+const Button = ({ handleButtonClick, images }) => {
   return (
     <div className={s.boxBtn}>
-      <button
-        type="button"
-        className={s.loadmoreBtn}
-        onClick={() => handleButtonClick()}
-      >
-        Load more
-      </button>
+      {images.length > 0 && (
+        <button
+          type="button"
+          className={s.loadmoreBtn}
+          onClick={handleButtonClick}
+        >
+          Load more
+        </button>
+      )}
     </div>
   );
 };
