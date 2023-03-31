@@ -50,17 +50,22 @@ export class App extends Component {
   };
 
   render() {
-    const { isLoading, allImages } = this.state;
-    const isAllImages = allImages.length;
-    return (
-      <div>
-        <header>
-          <Searchbar onSubmitForm={this.handleSubmit} />
-          <ImageGallery items={allImages} />
-          {isLoading && <Loader />}
-          {isAllImages > 0 && <Button handleButtonClick={this.loadMore} images={allImages} />}
-        </header>
-      </div>
-    );
-  }
+  const { isLoading, allImages, page } = this.state;
+  const isAllImages = allImages.length;
+  const imagesPerPage = 12;
+  const maxImages = page * imagesPerPage;
+
+  return (
+    <div>
+      <header>
+        <Searchbar onSubmitForm={this.handleSubmit} />
+        <ImageGallery items={allImages} />
+        {isLoading && <Loader />}
+        {isAllImages > 0 && isAllImages >= maxImages && (
+          <Button handleButtonClick={this.loadMore} images={allImages} />
+        )}
+      </header>
+    </div>
+  );
+}
 }
